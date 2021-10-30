@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/chapter1.rpy", line 549, in script
+    python:
+  File "game/chapter1.rpy", line 550, in <module>
+    showMC(null, True)
+NameError: name 'null' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/chapter1.rpy", line 549, in script
+    python:
+  File "C:\Users\Andy\Downloads\renpy-7.4.6-sdk/renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Andy\Downloads\renpy-7.4.6-sdk/renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/chapter1.rpy", line 550, in <module>
+    showMC(null, True)
+NameError: name 'null' is not defined
+
+Windows-10-10.0.19041
+Ren'Py 7.4.6.1693
+Bard Sim 0.0.0.1
+Wed Aug 25 22:16:57 2021
