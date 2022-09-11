@@ -1,2 +1,2 @@
 # Bard-Game
-Repo for the Ren'py game "Horny Bard Simulator" (working title)
+Repo for the Ren'py game "Bard Simulator" (working title)
