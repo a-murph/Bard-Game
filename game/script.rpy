@@ -43,7 +43,7 @@ init python:
                 self.reflexCap = "Themself"
                 self.contractCap = "They're"
 
-    ## Class object for tracking relationship points with each girl
+    ## Class object for tracking relationship points with each character
     class Relationship:
         def __init__(self):
             self.emma = 0

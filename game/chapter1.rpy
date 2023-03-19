@@ -14,7 +14,7 @@ label chapter1:
     # pause 7
 
     # stop sound
-    play movie "video/intro_scene.mp4"
+    play movie "video/intro_scene.webm"
     
     scene cg ashton face
     MCNameless "Where...?"
@@ -589,6 +589,7 @@ label chapter1:
         scene smuggler carriage night destroyed
         N "They seem pretty strong, but the attackers they are fighting far outnumber them."
         N "As the assailants swing their weapons, I can see that they are wearing golden crests. They must be the Golden Scales."
+        show goonbody at right
         show goon cocky at right
         Goon "You think you can get away with smuggling our citizens, huh?"
         play sound sword_clash_1
@@ -607,6 +608,7 @@ label chapter1:
         N "I don't have any weapons though, what am I supposed to do?"
         hide galebody
         hide gale
+        hide goonbody
         hide goon
         N "I look around frantically for an improvised weapon of some kind, and see my mandolin among the shards of destroyed carriage strewn on the ground."
         N "Maybe... I could distract them?"
@@ -1397,6 +1399,7 @@ label chapter1:
         N "As we're talking, a middle-aged woman comes up to the table."
         hide emmabody
         hide emma
+        show mlkbody at right
         show mlk smiling at right
         Innkeep "Is this the young musician I've been hearing about?"
         hide kazbody
@@ -1430,6 +1433,7 @@ label chapter1:
         MLK "Let me go talk to the chef, and he'll get something whipped up for you."
         show mlk smiling wink
         MLK "On the house, of course."
+        hide mlkbody
         hide mlk
         N "Mary Lynn walks away and the party chuckles a bit."
         show galebody at right
