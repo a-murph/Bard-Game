@@ -16,6 +16,7 @@ init python:
                 self.possCap = "His"
                 self.reflexCap = "Himself"
                 self.contractCap = "He's"
+                self.subjHasHave = "has"
             if (gender == "f"):
                 self.subj = "she"
                 self.obj = "her"
@@ -29,6 +30,7 @@ init python:
                 self.possCap = "Hers"
                 self.reflexCap = "Herself"
                 self.contractCap = "She's"
+                self.subjHasHave = "has"
             if (gender == "x"):
                 self.subj = "they"
                 self.obj = "them"
@@ -42,6 +44,7 @@ init python:
                 self.possCap = "Theirs"
                 self.reflexCap = "Themself"
                 self.contractCap = "They're"
+                self.subjHasHave = "have"
 
     ## Class object for tracking relationship points with each character
     class Relationship:
@@ -49,7 +52,7 @@ init python:
             self.emma = 0
             self.mae = 0
             self.gale = 0
-            self.var = 0
+            self.imara = 0
             self.chi = 0
             self.kaz = 0
             self.aldo = 0
@@ -62,7 +65,7 @@ init python:
                 "emma": self.emma,
                 "mae": self.mae,
                 "gale": self.gale,
-                "var": self.var,
+                "imara": self.imara,
                 "chi": self.chi,
                 "kaz": self.kaz,
                 "aldo": self.aldo,
@@ -126,25 +129,25 @@ init python:
         renpy.hide("mcftorso")
         renpy.hide("mcflegs")
 
-# Main Character (Default name: Ashton Moon)
+# Main Character (Default name: Dorian Blackmore)
 define MCNameless = Character("")
 define N = Character("", what_italic=True)
 define MC = Character("[firstName] [lastName]")
-default firstName = "Ashton"
-default lastName = "Moon"
+default firstName = "Dorian"
+default lastName = "Blackmore"
 default relationship = Relationship()
 
 # Main party members (TODO: Pick colors for each character)
-define Emma = Character("Emmaline Lightheart")
+define Emma = Character("Emmaline Lumiere")
 define Fighter = Character("Armored Girl")
 
 define Mae = Character("Mae Faeleigh")
 define Mage = Character("Frilly Girl")
 
-define Gale = Character("Gale Farrowthorn")
+define Gale = Character("Gale Ashwood")
 define Ranger = Character("Slender Girl")
 
-define Var = Character("Varna Northwind")
+define Imara = Character("Imara Oakheart")
 define Barbarian = Character("Large Woman")
 
 define Chi = Character("Chiyo")

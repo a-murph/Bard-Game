@@ -16,7 +16,7 @@ label chapter1:
     # stop sound
     play movie "video/intro_scene.webm"
     
-    scene cg ashton face
+    scene cg dorian face
     MCNameless "Where...?"
 
     # -----------------------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ label chapter1:
         N "I thought that I was in the middle of my band's first performance as the headliner, but then I suddenly opened my eyes to find myself in what appears to be a medieval village."
         MCNameless "Am I... having a mental breakdown?"
 
-        scene cg ashton hands
+        scene cg dorian hands
         N "I look down at my hands, and they still look like the hands I know very well. Still the same fingers that I know how to strum with."
         N "That familiar freckle just above the right index knuckle has never been so assuring."
 
@@ -60,7 +60,7 @@ label chapter1:
         N "I twist my neck around to no avail, and then stretch my arms up and around my back to feel my hands bump against hard polished wood."
         N "I reach higher and feel the neck of a stringed instrument, and lift it out of its holster and pull it in front of me."
 
-        scene cg ashton mandolin
+        scene cg dorian mandolin
         N "It's a mandolin."
         N "A finely-carved, teardrop-shaped body with a lovely burnt umber wood. I've seen these online, but never actually in person."
         play sound mandolin_tuning
@@ -282,10 +282,10 @@ label chapter1:
         
         label nameInput:
         python:
-            firstName = renpy.input("First name?", default="Ashton")
-            lastName = renpy.input("Last name?", default="Moon")
-            firstName = firstName.strip() or "Ashton"
-            lastName = lastName.strip() or "Moon"
+            firstName = renpy.input("First name?", default="Dorian")
+            lastName = renpy.input("Last name?", default="Blackmore")
+            firstName = firstName.strip() or "Dorian"
+            lastName = lastName.strip() or "Blackmore"
 
         show mc serious
         show derk neutral
@@ -340,7 +340,7 @@ label chapter1:
         N "I only just got here, but I get the feeling that those guys are going to be a lot of trouble."
         N "I make my way upstairs to get out of Derk's way so that he can run his shop."
 
-        scene bg mulberry shop
+        scene bg mulberry shop bedroom
         N "I cook up some rations for myself and take a rest in what appears to be a spare bedroom."
         N "I peer out the window and watch the bustling of the street below."
         N "As I watch the crowd, I catch a couple patrols of what appear to be armed guards, wearing what appears at a distance to be gold-colored crests on the shoulders of their armor."
@@ -511,14 +511,14 @@ label chapter1:
         N "Colorful fabric edged with delicate lacing..." #Focus on Mage for this line
         N "Tight leather straps hugging their bodies..." #Focus on Ranger for this line
         pause 2 #more panning
-        scene cg ashton miring
+        scene cg dorian miring
         pause 2
         scene cg smuggler carriage girls
         pause 2 #more panning, ending on mage tiddies
         play sound carriage_wheel_bump
         N "*KA-THUNK*"
         #TODO: animation and sound of jiggles goes here
-        scene cg ashton miring blush
+        scene cg dorian miring blush
         pause 2
         N "I accidentally find myself staring at the girls for a bit longer than is socially acceptable."
 
@@ -557,7 +557,7 @@ label chapter1:
         play sound carriage_explosion
         pause 4
 
-        scene smuggler carriage night destroyed
+        scene bg smuggler carriage night destroyed
         queue sound ears_ringing
         queue sound multiple_horses_getting_closer
         python:
@@ -586,7 +586,7 @@ label chapter1:
         #play sound magic_burst
         pause 2
         
-        scene smuggler carriage night destroyed
+        scene bg smuggler carriage night destroyed
         N "They seem pretty strong, but the attackers they are fighting far outnumber them."
         N "As the assailants swing their weapons, I can see that they are wearing golden crests. They must be the Golden Scales."
         show goonbody at right
@@ -688,12 +688,12 @@ label chapter1:
         show maebody injured at center
         show mae smiling at center
         Mage "It's a pleasure to make your acquaintance, [firstName]."
-        Fighter "My name's Emmaline! Emmaline Lightheart!"
+        Fighter "My name's Emmaline! Emmaline Lumiere!"
         hide emmabody
         hide emma
         show galebody injured at right
         show gale smiling eyesclosed at right
-        Ranger "Gale Farrowthorn."
+        Ranger "Gale Ashwood."
         Mage "And I'm Mae Faeleigh."
         MC "Nice to meet all of you."
 
@@ -796,7 +796,7 @@ label chapter1:
 
     # -----------------------------------------------------------------------------------------------------
     label chapter1_scene7:
-        scene strathmore walls night
+        scene bg strathmore walls night
         play ambience ambience_town_night
         play sound multiple_horses_galloping
         N "As we ride closer to the city of Strathmore, we break from the edge of the forest and I can see its large walls growing on the horizon."
@@ -804,7 +804,7 @@ label chapter1:
         N "As we get closer I can see the gate is open, but there is a small group of guards posted at it. Emmaline begins to shout to them."
         N "The guards look towards us, and at first seem cautious, but as we get closer they seem to recognize Emmaline's shouting and move to open the center of the path for us to race through without stopping."
 
-        scene strathmore street night
+        scene bg strathmore street night
         N "I follow the lead of the others, who seem to know by heart where the nearest hospital is in town."
         N "We pull up outside of it, and Mae and Emmaline quickly hop off as a nurse runs out, and they help bring Jo inside."
         N "I stand by the entrance, unsure if I should go in or not."
@@ -1167,12 +1167,12 @@ label chapter1:
         hide ala
         show mae serious
         Mae "Aldona, [firstName] has shown promise of great magical abilities that could be a great benefit to our team."
-        Mae "[pronoun.subjCap] have only just awakened to [pronoun.adj] power, but even at these levels boosted our strength enough to fend off many more men than we would ordinaily be able to."
+        Mae "[pronoun.subjCap] [pronoun.subjHasHave] only just awakened to [pronoun.adj] power, but even at these levels boosted our strength enough to fend off many more men than we would ordinaily be able to."
         show aldobody at right
         show aldo nervous at right
         AldoFirst "..."
         Mae "I understand that you are a bit skeptical of the idea of bringing strangers on board with us-"
-        Mae "but I think turning Ashton away woul be a greatly missed opportunity that could shift the tides in fighting against the Scales."
+        Mae "but I think turning [firstName] away woul be a greatly missed opportunity that could shift the tides in fighting against the Scales."
         show aldo serious eyesclosed
         N "Aldona's expression grows pensive again. She seems reluctant, but unable to deny the reasoning of Mae."
         AldoFirst "If that is all true, then fine. We'll give [pronoun.obj] a shot."
@@ -1487,19 +1487,19 @@ label chapter1:
         show aldobody at left
         show aldo serious at left
         Aldo "I trust everything went well?"
-        show varbody at right
-        show var smiling at right
+        show imarabody at right
+        show imara smiling at right
         Barbarian "Just as planned, no problem at all."
         N "The large woman notices me almost immediately."
-        show var smiling wink
+        show imara smiling wink
         Barbarian "New person?"
         show maebody at center
         show mae assured at center
         Mae "Yes. Gale, Emmaline and I had a close call on our mission. This is [firstName] [lastName]. [pronoun.subjCap] helped us out greatly, and agreed to join the team."
         Barbarian "Ah!"
-        show var smiling
+        show imara smiling
         show aldo neutral
-        Aldo "[firstName], this is Varna Northwind,"
+        Aldo "[firstName], this is Imara Oakheart,"
         hide maebody
         hide mae
         show chibody at center
@@ -1525,16 +1525,16 @@ label chapter1:
             showMC([left])
         show mc nervous at left
         MC "..."
-        N "Varna surprises me with the clap of a large hand on my shoulder."
-        Var "Pay no mind to her, she's just tired from a long mission."
+        N "Imara surprises me with the clap of a large hand on my shoulder."
+        Imara "Pay no mind to her, she's just tired from a long mission."
         python:
             hideMC()
         hide mc
         show kazbody at left
         show kaz amused at left
         Kaz "Still, that was a bit more pissy than she usually is."
-        show var thinking
-        Var "Well, we had a little bit of a disagreement along the way."
+        show imara thinking
+        Imara "Well, we had a little bit of a disagreement along the way."
         show chi solemn
         Chi "I think it might be my fault."
         hide kazbody
@@ -1542,8 +1542,8 @@ label chapter1:
         show maebody at left
         show mae inquisitive at left
         Mae "You did say everything went well, right?"
-        show var neutral
-        Var "Yes, the mission went over well, regardless of any disagreements."
+        show imara neutral
+        Imara "Yes, the mission went over well, regardless of any disagreements."
         hide maebody
         hide mae
         show aldobody at left
@@ -1555,4 +1555,4 @@ label chapter1:
         show gale neutral at center
         Gale "It's probably best to let her cool off for a bit, anyway."
         show aldo assured
-        Aldo "Right. Varna, Chiyo, have a seat. We have much to discuss."
+        Aldo "Right. Imara, Chiyo, have a seat. We have much to discuss."
