@@ -143,6 +143,7 @@ init python:
         renpy.hide("mcfhead")
         renpy.hide("mcftorso")
         renpy.hide("mcflegs")
+        renpy.hide("mc")
 
 # Main Character (Default name: Dorian Blackmore)
 define MCNameless = Character("")

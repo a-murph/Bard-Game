@@ -111,7 +111,6 @@ label chapter1:
         MCNameless "Oh..."
         python:
             hideMC()
-        hide mc
         N "I guess I'm going to have to figure out some way to make money after all.{p}Even in a fever dream, I can't escape it."
         N "I think of all the townsfolk I saw dealing in the square. I don't have nearly enough muscle to be hauling crates as big as those guys."
         N "I also don't have any crafting skills to make wares, and if I had the startup capital to be buying wares to trade, I wouldn't be in this situation."
@@ -125,7 +124,6 @@ label chapter1:
         #TODO: Figure out how to make ongoing street ambience quieter here
         python:
             hideMC()
-        hide mc
         N "I pull myself into an alleyway and sit for a while while I play around with my new instrument, figuring out how it translates to the stringed instruments I've played before."
         python:
             showMC()
@@ -133,7 +131,6 @@ label chapter1:
         MCNameless "Oh, I see... it's like the lowest four strings of a guitar - but reversed!"
         python:
             hideMC()
-        hide mc
         #play sound mandolin_noodling_1
         N "I spend the evening playing around with the instrument, getting lost in feeling my way around the fretboard, strumming out old tunes that I used to play."
         
@@ -156,7 +153,6 @@ label chapter1:
         MCNameless "Right! I gotta earn some money!"
         python:
             hideMC()
-        hide mc
         N "I exit out onto the street. There are a decent amount of people going by, but not quite as large of a crowd as yesterday."
         #TODO: figure out how to make ongoing street ambience louder here
         N "I set up shop, so to speak, and begin playing what I practiced last night."
@@ -169,7 +165,6 @@ label chapter1:
         MCNameless "That's unusual."
         python:
             hideMC()
-        hide mc
         N "I continue to play and get similar reactions from the people going down the road. Nobody approaches, or even places a hand on their coin pouch like they're considering giving money."
         python:
             showMC()
@@ -178,7 +173,6 @@ label chapter1:
         play sound shop_door_open_bell
         python:
             hideMC()
-        hide mc
         N "A small bell rings as the shop door of the building next to me swings open. A gruff-looking man sticks his head out of the door and frantically looks around before finding me."
         
         python:
@@ -382,7 +376,6 @@ label chapter1:
 
         python:
             hideMC()
-        hide mc
         hide derkbody
         hide derk
         N "\"Young bard?\" As I head down the street, I think about Derk's send-off."
@@ -399,7 +392,6 @@ label chapter1:
         MC "That looks so nice..."
         python:
             hideMC()
-        hide mc
         N "As I look at the people walking down the street, a flash of maroon in the alleyway catches the corner of my eye."
         N "What looks like... a hooded figure?"
         N "I look quickly, but almost as quickly as I look, they're gone."
@@ -409,7 +401,6 @@ label chapter1:
         MC "That's right, this is still an unfamiliar town at night. I gotta be careful, unless I want to get robbed."
         python:
             hideMC()
-        hide mc
         N "I tuck my hands farther into my pockets and hasten the pace a bit."
         N "I pass by a group of guards standing watch over the activities of the pedestrians, but try my best to not make eye contact and keep walking as if I am trying to get home."
         N "As I approach the meeting site, I make sure to check behind me a couple times as I go."
@@ -444,7 +435,6 @@ label chapter1:
         N "Was there something else I was supposed to say?"
         python:
             hideMC()
-        hide mc
         hide jobody
         hide jo
         N "I follow the driver around the corner, where tucked into the alley is a covered horse-drawn wagon filled with crates. There is an assortment of other people waiting."
@@ -541,7 +531,6 @@ label chapter1:
         hide emma
         python:
             hideMC()
-        hide mc
         play sound arrow_shoot
         queue sound arrow_hit
         pause 2
@@ -566,7 +555,6 @@ label chapter1:
         MC "Egh..."
         python:
             hideMC()
-        hide mc
         N "It seems that the transport didn't go unnoticed after all."
         #queue ambience carriage_attack_ambience
         play music music_skirmish
@@ -625,9 +613,9 @@ label chapter1:
             showMC([], True)
         show mc angry
         MC "HEYYY!"
+        stop ambience
         python:
             hideMC()
-        hide mc
 
         jump start_game
 
@@ -704,7 +692,6 @@ label chapter1:
         Mae "We're part of a guild that has been working to push back against their advances."
         python:
             hideMC()
-        hide mc
         show galebody injured at left
         show gale serious at left
         show emmabody injured at right
@@ -752,7 +739,6 @@ label chapter1:
         hide emma
         python:
             hideMC()
-        hide mc
         hide jobody
         hide jo
         N "We all rush over to the wreckage and quickly lift the boards that are pinning Jo down."
@@ -870,7 +856,6 @@ label chapter1:
             N "Just as I open my mouth to give her an answer, Mae and Emmaline emerge from the hospital."
             python:
                 hideMC()
-            hide mc
             show maebody at left
             show mae assured at left
             show emmabody at center
@@ -963,7 +948,6 @@ label chapter1:
             if (hiddenChar == "gale"):
                 python:
                     hideMC()
-                hide mc
             
             show galebody injured at right
             show gale nervous at right
@@ -972,7 +956,6 @@ label chapter1:
             if (hiddenChar == "mae"):
                 python:
                     hideMC()
-                hide mc
             
             show maebody at left
             show mae neutral at left
@@ -1005,7 +988,6 @@ label chapter1:
             Emma "Ooo - looks like [firstName] is already in the hot seat!"
             python:
                 hideMC()
-            hide mc
             show galebody injured at right
             show gale amused at right
             Gale ""
@@ -1062,7 +1044,6 @@ label chapter1:
         MC "Oh, no - I mean - I had gotten kidnapped by the Golden Scales, and that's how I ended up in Mulberry Town. I honestly don't remember much before they attacked me."
         python:
             hideMC()
-        hide mc
         show galebody at left
         show gale solemn at left
         show mae solemn
@@ -1159,7 +1140,6 @@ label chapter1:
         N "Mae clears her throat audibly."
         python:
             hideMC()
-        hide mc
         show maebody at left
         show mae irritated at left
         Mae "Yes, the subject - changing it."
@@ -1239,7 +1219,6 @@ label chapter1:
         label choice3_after:
             python:
                 hideMC()
-            hide mc
             hide aldobody
             hide aldo
             play music music_cozy_place
@@ -1339,7 +1318,6 @@ label chapter1:
             MC "{i}*sigh*{/i}"
             python:
                 hideMC()
-            hide mc
             N "What an exhausting day. Maybe after some sleep, tomorrow will be a little less hectic."
             N "I blow out the candle lamp on the night stand, and doze off almost immediately."
             N "At least... I don't have to figure this out all alone."
@@ -1465,7 +1443,6 @@ label chapter1:
         Aldo "-?!"
         python:
             hideMC()
-        hide mc
         show emmabody at left
         show emma amused at left
         Emma "And they're both so serious all the time!"
@@ -1529,7 +1506,6 @@ label chapter1:
         Imara "Pay no mind to her, she's just tired from a long mission."
         python:
             hideMC()
-        hide mc
         show kazbody at left
         show kaz amused at left
         Kaz "Still, that was a bit more pissy than she usually is."

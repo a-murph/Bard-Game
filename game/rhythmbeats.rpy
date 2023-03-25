@@ -47,7 +47,7 @@ init python:
     class RhythmPlayground:
 
         def __init__(self, fn, displayable, song_file, offset_map = 0.0, offset_game = 0, threshold = 100, max_score = 1000, failsafe = False):
-            """Constructor de la clase RhythmPlayground(). 
+            """Constructor for the class RhythmPlayground(). 
             Receives 8 parameters (3 required) at the time the request is created. 
             class instance. 
 
@@ -78,8 +78,8 @@ init python:
             or a floating point number representing time (in seconds) 
             that the beatmap must compensate with respect to the musical track, in case 
             that there is a discrepancy between the two. 
-            Positive values ​​delay the beatmap with respect to the music track, 
-            while negative values ​​advance it. 
+            Positive values delay the beatmap with respect to the music track, 
+            while negative values advance it. 
 
             offset_game (int): 
             If it is not 0, this parameter receives an integer as an argument. 
@@ -184,15 +184,6 @@ init python:
             self.left = False
             self.right = False
 
-            ## ------------------ OTHER ELEMENTS OF PYGAME ----------------- ##
-
-            ## Pulse area for touch screens
-            self.area_left = pygame.Rect(0, 0, 640, 720)
-            self.area_right = pygame.Rect(640, 0, 640, 720)
-
-            ## Finger registration on touch screens
-            self.finger_log = dict()
-
 
         ## ------------------------------------------------------------------ ##
         ## Methods for internal use of RhythmBeats
@@ -201,30 +192,14 @@ init python:
             """
             (UNDOCUMENTED) 
             This method collects pygame events to recognize touches 
-            of the player in the game, either with a keyboard or with a touch screen. 
-
-            NOTE: I can't read multiple fingers on one screen 
-            tactile, since Ren'Py seems to limit Pygame events to me, so 
-            that mobile touch recognition can be... unpleasant =(
+            of the player in the game.
             """
 
-            ## Are you playing on PC?  Get the state of the game keys.
+            ## Get the state of the game keys.
             if renpy.windows or renpy.linux:
                 keys = pygame.key.get_pressed()
                 self.left = keys[self.left_key]
                 self.right = keys[self.right_key]
-
-            ## Are you playing on Android?  Let's read the coordinates of the fingers.
-            elif renpy.android:
-                if ev.type == pygame.FINGERDOWN:
-                    if all((x in xrange(0, 400), y in xrange(0, 720))):
-                        self.left = True
-                    if all((x in xrange(880, 1280), y in xrange(0, 720))):
-                        self.right = True
-
-                if ev.type == pygame.FINGERUP:
-                    self.left = False
-                    self.right = False
 
 
         def get_note_score(self, diff):
@@ -351,7 +326,7 @@ init python:
 
             def add_note(timestamp, lane):
                 sprite = self.waterfall_mgr.create(self.displayable)
-                sprite.x = 560 if lane == "LEFT" else 650
+                sprite.x = 642 if lane == "LEFT" else 1147
                 sprite.y = -120
 
                 self.spritegroup.append((sprite, timestamp, lane))
@@ -382,22 +357,6 @@ init python:
                 elif rv > moverange[1]:
                     rv = moverange[1]
 
-            elif heading == "XL":
-                rv = abs((trace * timerange) - moverange[0])
-
-                if epoch > timestamp or rv < moverange[1]:
-                    rv = moverange[1]
-                if rv > moverange[0]:
-                    rv = moverange[0]
-
-            elif heading == "XR":
-                rv = abs((trace * timerange) + moverange[0])
-
-                if rv < moverange[0]:
-                    rv = moverange[0]
-                elif rv > moverange[1]:
-                    rv = moverange[1]
-
             return rv
 
 
@@ -409,12 +368,10 @@ init python:
 
             for sp, stamp, lane in self.spritegroup:
                 if lane=="LEFT" and st > stamp - self.map_delta:
-                    sp.x = self.notetrace((550, 430), "XL", stamp, st)
-                    sp.y = self.notetrace((-120, 530), "Y", stamp, st)
+                    sp.y = self.notetrace((-120, 805), "Y", stamp, st)
 
                 if lane=="RIGHT" and st > stamp - self.map_delta:
-                    sp.x = self.notetrace((650, 765), "XR", stamp, st)
-                    sp.y = self.notetrace((-120, 530), "Y", stamp, st)
+                    sp.y = self.notetrace((-120, 805), "Y", stamp, st)
 
                 if st > stamp + 0.9:
                     sp.destroy()
@@ -478,7 +435,7 @@ init python:
             iterate the beatmap with only 1 for loop on a screen =D 
 
             This must be called after instantiating the class.  does not receive any 
-            argumento en particular."""
+            arguments in particular."""
 
             return itertools.zip_longest(self.lane_L, self.lane_R, fillvalue = "End")
 

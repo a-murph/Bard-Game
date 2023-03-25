@@ -37,10 +37,11 @@ label start_game:
   python:
     game_instance = RhythmPlayground(
       fn = "beatmaps/beatmap_placeholder.txt",
-      displayable = Transform("note_img", zoom=0.55),
+      displayable = Transform("note_img", zoom=1.00),
       song_file = "songs/rhythmgame_placeholder.mp3",
       offset_map = 0.0,
-      offset_game = 0
+      offset_game = 0,
+      failsafe = True
     )
     game_instance.load()
 
