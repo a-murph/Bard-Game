@@ -3,48 +3,63 @@ init python:
     ## Class object for setting pronouns and using them in dialogue
     class Pronoun:
         def __init__(self, gender):
+            ## self.subj: Subject term (he/she/they)
+            ## self.obj: Object term (him/her/them)
+            ## self.adj: Adjective term (his/her/their)
+            ## self.poss: Possessive term (his/hers/theirs)
+            ## self.relex: Reflexive term (himself/herself/themself)
+            ## self.contractIs: Contraction with "is" (he's/she's/they're)
+            ## self.contractHas: Contraction with "has" (he's/she's/they've)
+            ## self.hasHave: "has" or "have" (he has/she has/they have)
+            ## self.xyzCap" Capitalized version of one of the above values
             if (gender == "m"):
                 self.subj = "he"
                 self.obj = "him"
                 self.adj = "his"
                 self.poss = "his"
                 self.reflex = "himself"
-                self.contract = "he's"
+                self.contractIs = "he's"
+                self.contractHas = "he's"
+                self.hasHave = "has"
                 self.subjCap = "He"
                 self.objCap = "Him"
                 self.adjCap = "His"
                 self.possCap = "His"
                 self.reflexCap = "Himself"
-                self.contractCap = "He's"
-                self.subjHasHave = "has"
+                self.contractIsCap = "He's"
+                self.contractHasCap = "He's"
             if (gender == "f"):
                 self.subj = "she"
                 self.obj = "her"
                 self.adj = "her"
                 self.poss = "hers"
                 self.reflex = "herself"
-                self.contract = "she's"
+                self.contractIs = "she's"
+                self.contractHas = "she's"
+                self.hasHave = "has"
                 self.subjCap = "She"
                 self.objCap = "Her"
                 self.adjCap = "Her"
                 self.possCap = "Hers"
                 self.reflexCap = "Herself"
-                self.contractCap = "She's"
-                self.subjHasHave = "has"
+                self.contractIsCap = "She's"
+                self.contractHasCap = "She's"
             if (gender == "x"):
                 self.subj = "they"
                 self.obj = "them"
                 self.adj = "their"
                 self.poss = "theirs"
                 self.reflex = "themself"
-                self.contract = "they're"
+                self.contractIs = "they're"
+                self.contractHas = "they've"
+                self.hasHave = "have"
                 self.subjCap = "They"
                 self.objCap = "Them"
                 self.adjCap = "Their"
                 self.possCap = "Theirs"
                 self.reflexCap = "Themself"
-                self.contractCap = "They're"
-                self.subjHasHave = "have"
+                self.contractIsCap = "They're"
+                self.contractHasCap = "They've"
 
     ## Class object for tracking relationship points with each character
     class Relationship:

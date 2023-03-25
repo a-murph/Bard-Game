@@ -629,7 +629,7 @@ label chapter1:
             hideMC()
         hide mc
 
-        jump rhythmgame
+        jump start_game
 
         #TODO: Figure out rhythm game failstate logic
         
@@ -939,7 +939,7 @@ label chapter1:
                 MC "You all seem like really great people, I would love to help."
                 show emma excited
                 N "Emmaline becomes ecstatic upon hearing this."
-                Emma "[pronoun.contractCap] really gonna join?"
+                Emma "[pronoun.contractIsCap] really gonna join?"
                 python:
                     relationship.emma += 1
                 jump choice2_after
@@ -1142,7 +1142,7 @@ label chapter1:
 
         scene cg alarice introduction
         #play sound tiddy_timpani
-        AlaFirst "[pronoun.contractCap] so cute, you mean we get to keep [pronoun.obj]?"
+        AlaFirst "[pronoun.contractIsCap] so cute, you mean we get to keep [pronoun.obj]?"
         AldoFirst "I didn't say [pronoun.subj] could-"
         Emma "See, look! Alarice likes [pronoun.obj]!"
         Gale "{size=-10}Alarice likes everyone...{/size}"
@@ -1167,7 +1167,7 @@ label chapter1:
         hide ala
         show mae serious
         Mae "Aldona, [firstName] has shown promise of great magical abilities that could be a great benefit to our team."
-        Mae "[pronoun.subjCap] [pronoun.subjHasHave] only just awakened to [pronoun.adj] power, but even at these levels boosted our strength enough to fend off many more men than we would ordinaily be able to."
+        Mae "[pronoun.subjCap] [pronoun.hasHave] only just awakened to [pronoun.adj] power, but even at these levels boosted our strength enough to fend off many more men than we would ordinaily be able to."
         show aldobody at right
         show aldo nervous at right
         AldoFirst "..."
@@ -1366,7 +1366,7 @@ label chapter1:
         N "I make my way over to them."
         show maebody at left
         show mae amused at left
-        Mae "Ah, [pronoun.contract] awake."
+        Mae "Ah, [pronoun.contractIs] awake."
         show aldobody at right
         show aldo assured at right
         Aldo "Good morning, [firstName]."

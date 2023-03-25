@@ -26,7 +26,7 @@ define gui.show_name = True
 ##      First number: release-ready version
 ##      Second number: number of chapters FULLY completed (including editing, testing)
 ##      Third number: number of chapters with complete assets
-##      Fourth number: number of chapters with complete scripts
+##      Fourth number: number of chapters with complete scripts (at least first draft)
 ## The rhythm game as a whole counts as 1 chapter
 
 define config.version = "0.0.0.1"
@@ -53,7 +53,7 @@ define build.name = "BardSim"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.

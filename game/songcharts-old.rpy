@@ -3,7 +3,7 @@ init python:
     pos2 = 860
     pos3 = 1060
     pos4 = 1260
-    beat = 0.72289156626 # 83 bpm, valid for the first song
+    beat = 0.72289156626 # 83 bpm, valid for test song
     offset = 1.666666666667
 
     def addNote(timing, position):
